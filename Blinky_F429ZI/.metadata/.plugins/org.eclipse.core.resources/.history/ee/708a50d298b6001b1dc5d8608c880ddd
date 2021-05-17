@@ -1,0 +1,61 @@
+
+#include "stm32f4xx.h"
+
+#define LED_PORT              GPIOB
+#define LED_PORT_RCC_EN       0x2u
+#define GPIO_MODE_MASK       ~0x3u
+#define GPIO_MODE_OUTPUT      0x1u
+
+#define GREEN_LED_PIN         0u
+#define BLUE_LED_PIN          7u
+#define RED_LED_PIN           14u
+#define FLASH_LED             BLUE_LED_PIN
+
+
+void delayMs( unsigned delay );
+
+int main(void)
+{
+    RCC->AHB1ENR |= LED_PORT_RCC_EN ; // enable for PORT B
+    //LED_PORT->MODER &= GPIO_MODE_MASK << FLASH_LED ;
+    //LED_PORT->MODER |= GPIO_MODE_OUTPUT << FLASH_LED ;
+      GPIOB->MODER |= 0x4000;  // blue LED PB7
+      GPIOB->MODER |= 0x1;  // green LED PB0
+      GPIOB->ODR |= 0x1; // green LED ODR
+      GPIOB->MODER |=  0x1 << 28; // red LED PB14
+      GPIOB->ODR |= 0x1 <<14; // RED LED ODR
+      //GPIOB->BSRR |= 0x4000; // 7th pin
+    // connected to pull up resistor -- when we press button , it goes low
+        //B1 user button is connected to PC13 - i.e. blue button
+      // Enable clock to PC13 i.e. Port C
+      RCC->AHB1ENR |=  0x1 << 2;
+      //GPIOC->MODER |=     //Input mode PC13- 13th pin 0
+       // by default pins are input only
+      GPIOC->MODER |=  0;
+    for(;;)
+    {
+               // pressed blue button
+               if( (GPIOC->IDR & (1<<13)) ) // PC13
+                 {
+                      LED_PORT->ODR |= 0x1 << FLASH_LED ;
+
+                 }
+                 else
+                 {
+            LED_PORT->ODR &= ~(0x1 << FLASH_LED) ;
+
+                 }
+    }
+
+    return 0 ;
+}
+
+void delayMs( unsigned delay )
+{
+    for( volatile unsigned d = delay; d > 0; d--)
+    {
+        for( volatile int i = 0; i < 3195; i++ )
+        {
+        }
+    }
+}

@@ -507,3 +507,162 @@
 2021-05-16 16:54:25,463 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
 2021-05-16 16:54:26,181 [INFO] ApiDb:276 - Save user favorites file C:\Users\StanPC/.stm32cubeide/favorites.mcus.txt: 0 item(s)
 2021-05-16 16:54:26,181 [INFO] ApiDb:280 - User favorites MCUs=[]
+2021-05-16 17:51:49,198 [INFO] Gpio:248 - dependency for GPIO [RCC, SYS, USART2]
+2021-05-16 17:52:15,933 [INFO] Gpio:248 - dependency for GPIO [RCC, SYS, USART2]
+2021-05-16 17:52:15,977 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-16 17:52:16,066 [INFO] Gpio:248 - dependency for GPIO [RCC, SYS, USART2]
+2021-05-16 17:52:16,109 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-16 17:52:21,194 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 394233088 Bytes (541065216)
+2021-05-16 17:52:22,231 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 413107456 Bytes (541065216)
+2021-05-16 17:52:26,173 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 373292944 Bytes (541065216)
+2021-05-16 17:52:26,507 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-05-16 17:52:26,507 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-05-16 17:52:26,507 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-05-16 17:52:26,508 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-05-16 17:52:26,508 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-05-16 17:52:26,509 [INFO] CodeGenerator:641 - code generatio: config db path: F:\engineering\STI\theirstuff\IDE\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2021-05-16 17:52:26,942 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp_save
+2021-05-16 17:52:27,066 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp
+2021-05-16 17:52:27,157 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp_save
+2021-05-16 17:52:27,213 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp
+2021-05-16 17:52:27,488 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 17:52:27,511 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c_save
+2021-05-16 17:52:27,593 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c
+2021-05-16 17:52:27,602 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h_save
+2021-05-16 17:52:27,657 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h
+2021-05-16 17:52:27,696 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2021-05-16 17:52:27,806 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c
+2021-05-16 17:52:27,812 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp_save
+2021-05-16 17:52:27,877 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp
+2021-05-16 17:52:27,913 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2021-05-16 17:52:27,996 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h
+2021-05-16 17:52:28,047 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h_save
+2021-05-16 17:52:28,113 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h
+2021-05-16 17:52:28,124 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c_save
+2021-05-16 17:52:28,234 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c
+2021-05-16 17:52:29,432 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 528mS.
+2021-05-16 17:52:29,437 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-05-16 17:52:29,913 [INFO] ConfigFileManager:1242 - The Die is : DIE415
+2021-05-16 17:52:32,254 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 2817mS.
+2021-05-16 17:52:32,255 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 1mS.
+2021-05-16 17:52:32,257 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-05-16 18:36:38,962 [INFO] Gpio:248 - dependency for GPIO [RCC, SYS, USART2]
+2021-05-16 18:36:46,016 [INFO] DbMcusDocs:143 - JSON generation date=Mon Feb 08 05:35:07 PST 2021 (1612791307)
+2021-05-16 18:36:46,244 [INFO] DbMcusDocs:79 - Found 617 MCUs documents
+2021-05-16 18:42:36,295 [INFO] Gpio:248 - dependency for GPIO [RCC, SYS, USART2]
+2021-05-16 18:42:42,183 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,35,795x668,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-16 19:53:00,047 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 434812928 Bytes (769654784)
+2021-05-16 19:53:01,737 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 453212392 Bytes (769654784)
+2021-05-16 19:53:03,202 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 498253824 Bytes (769654784)
+2021-05-16 19:53:03,483 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-05-16 19:53:03,483 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-05-16 19:53:03,484 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-05-16 19:53:03,484 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-05-16 19:53:03,484 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8L4
+2021-05-16 19:53:03,484 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-05-16 19:53:03,485 [INFO] CodeGenerator:641 - code generatio: config db path: F:\engineering\STI\theirstuff\IDE\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2021-05-16 19:53:03,787 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp_save
+2021-05-16 19:53:03,869 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp
+2021-05-16 19:53:03,927 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp_save
+2021-05-16 19:53:03,979 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp
+2021-05-16 19:53:04,373 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 19:53:04,374 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 19:53:04,392 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c_save
+2021-05-16 19:53:04,469 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c
+2021-05-16 19:53:04,480 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h_save
+2021-05-16 19:53:04,530 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h
+2021-05-16 19:53:04,546 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2021-05-16 19:53:04,646 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c
+2021-05-16 19:53:04,651 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp_save
+2021-05-16 19:53:04,694 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp
+2021-05-16 19:53:04,708 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2021-05-16 19:53:04,776 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h
+2021-05-16 19:53:04,815 [WARN] IPConfigManager:2976 - IP not found : TIM
+2021-05-16 19:53:04,816 [WARN] CodeGenerator:3191 - IP not found : null
+2021-05-16 19:53:04,829 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h_save
+2021-05-16 19:53:04,890 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h
+2021-05-16 19:53:04,899 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c_save
+2021-05-16 19:53:05,105 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c
+2021-05-16 19:53:05,943 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 145mS.
+2021-05-16 19:53:05,949 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-05-16 19:53:06,333 [INFO] ConfigFileManager:1242 - The Die is : DIE415
+2021-05-16 19:53:08,120 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 2171mS.
+2021-05-16 19:53:08,121 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-05-16 19:53:08,123 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-05-16 20:02:47,818 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 564645688 Bytes (800063488)
+2021-05-16 20:02:48,894 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 581949240 Bytes (800063488)
+2021-05-16 20:02:50,041 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 409456440 Bytes (800063488)
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8L4
+2021-05-16 20:02:50,296 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-05-16 20:02:50,297 [INFO] CodeGenerator:641 - code generatio: config db path: F:\engineering\STI\theirstuff\IDE\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2021-05-16 20:02:50,704 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp_save
+2021-05-16 20:02:50,767 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp
+2021-05-16 20:02:50,819 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp_save
+2021-05-16 20:02:50,859 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp
+2021-05-16 20:02:51,277 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 20:02:51,278 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 20:02:51,297 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c_save
+2021-05-16 20:02:51,363 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c
+2021-05-16 20:02:51,369 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h_save
+2021-05-16 20:02:51,420 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h
+2021-05-16 20:02:51,437 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2021-05-16 20:02:51,532 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c
+2021-05-16 20:02:51,536 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp_save
+2021-05-16 20:02:51,578 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp
+2021-05-16 20:02:51,594 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2021-05-16 20:02:51,667 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h
+2021-05-16 20:02:51,715 [WARN] IPConfigManager:2976 - IP not found : TIM
+2021-05-16 20:02:51,716 [WARN] CodeGenerator:3191 - IP not found : null
+2021-05-16 20:02:51,732 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h_save
+2021-05-16 20:02:51,813 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h
+2021-05-16 20:02:51,823 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c_save
+2021-05-16 20:02:51,946 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c
+2021-05-16 20:02:52,871 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 171mS.
+2021-05-16 20:02:52,883 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-05-16 20:02:53,524 [INFO] ConfigFileManager:1242 - The Die is : DIE415
+2021-05-16 20:02:55,972 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 3089mS.
+2021-05-16 20:02:55,974 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 1mS.
+2021-05-16 20:02:55,977 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 1mS.
+2021-05-16 20:03:03,442 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,819x268,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-16 20:03:05,893 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 524058520 Bytes (881852416)
+2021-05-16 20:03:06,983 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 540835736 Bytes (881852416)
+2021-05-16 20:03:08,282 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 586450840 Bytes (881852416)
+2021-05-16 20:03:08,662 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-05-16 20:03:08,663 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-05-16 20:03:08,663 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-05-16 20:03:08,663 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-05-16 20:03:08,663 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8L4
+2021-05-16 20:03:08,663 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-05-16 20:03:08,665 [INFO] CodeGenerator:641 - code generatio: config db path: F:\engineering\STI\theirstuff\IDE\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2021-05-16 20:03:09,139 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp_save
+2021-05-16 20:03:09,250 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp
+2021-05-16 20:03:09,350 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp_save
+2021-05-16 20:03:09,426 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp
+2021-05-16 20:03:09,854 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 20:03:09,855 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-16 20:03:09,883 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c_save
+2021-05-16 20:03:10,016 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c
+2021-05-16 20:03:10,023 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h_save
+2021-05-16 20:03:10,108 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h
+2021-05-16 20:03:10,131 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2021-05-16 20:03:10,264 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c
+2021-05-16 20:03:10,269 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp_save
+2021-05-16 20:03:10,329 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp
+2021-05-16 20:03:10,349 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2021-05-16 20:03:10,446 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h
+2021-05-16 20:03:10,499 [WARN] IPConfigManager:2976 - IP not found : TIM
+2021-05-16 20:03:10,500 [WARN] CodeGenerator:3191 - IP not found : null
+2021-05-16 20:03:10,521 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h_save
+2021-05-16 20:03:10,594 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h
+2021-05-16 20:03:10,605 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c_save
+2021-05-16 20:03:10,768 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c
+2021-05-16 20:03:11,829 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 168mS.
+2021-05-16 20:03:11,834 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-05-16 20:03:12,382 [INFO] ConfigFileManager:1242 - The Die is : DIE415
+2021-05-16 20:03:14,781 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 2947mS.
+2021-05-16 20:03:14,783 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 1mS.
+2021-05-16 20:03:14,790 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.

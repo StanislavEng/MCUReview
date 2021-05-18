@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +43,6 @@
 I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim16;
-TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
 
@@ -57,7 +56,6 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM16_Init(void);
 static void MX_I2C1_Init(void);
-static void MX_TIM17_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -74,7 +72,7 @@ static void MX_TIM17_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	//uint8_t buff[12];
+	uint8_t buff[12];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -98,18 +96,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM16_Init();
   MX_I2C1_Init();
-  MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim16);
-  HAL_TIM_Base_Start_IT(&htim17);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //strcpy((char*)buff,"Hello!\r\n");  // temporarily dumping this into the one interrupt I have going
-	  //HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+	  strcpy((char*)buff,"Hello!\r\n");
+	  HAL_UART_Transmit(*huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
 	  //HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 	  //HAL_Delay(200);
 	  /*if (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == 1){
@@ -266,38 +262,6 @@ static void MX_TIM16_Init(void)
 }
 
 /**
-  * @brief TIM17 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM17_Init(void)
-{
-
-  /* USER CODE BEGIN TIM17_Init 0 */
-
-  /* USER CODE END TIM17_Init 0 */
-
-  /* USER CODE BEGIN TIM17_Init 1 */
-
-  /* USER CODE END TIM17_Init 1 */
-  htim17.Instance = TIM17;
-  htim17.Init.Prescaler = 8000 - 1;
-  htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim17.Init.Period = 2000 - 1;
-  htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim17.Init.RepetitionCounter = 0;
-  htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim17) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM17_Init 2 */
-
-  /* USER CODE END TIM17_Init 2 */
-
-}
-
-/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -349,8 +313,6 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LD2_Pin|GPIO_PIN_8, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
 
   /*Configure GPIO pin : B1_Pin */
@@ -372,11 +334,6 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if (htim == &htim16){
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-	}
-	if (htim == &htim17){
-	  uint8_t buff[12];
-	  strcpy((char*)buff,"Hello!\r\n");  // temporarily dumping this into the one interrupt I have going
-	  HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
 	}
 }
 /* USER CODE END 4 */

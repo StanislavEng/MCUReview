@@ -21,29 +21,29 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         0000000c  20000000  08003bc8  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000188  2000000c  08003bd4  0002000c  2**2
+  9 .bss          000001a0  2000000c  08003bd4  0002000c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000194  08003bd4  00020194  2**0
+ 10 ._user_heap_stack 00000604  200001ac  08003bd4  000201ac  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001298b  00000000  00000000  0002003c  2**0
+ 12 .debug_info   00012bc7  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00002133  00000000  00000000  000329c7  2**0
+ 13 .debug_abbrev 0000211b  00000000  00000000  00032c03  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001108  00000000  00000000  00034b00  2**3
+ 14 .debug_aranges 00001120  00000000  00000000  00034d20  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00001040  00000000  00000000  00035c08  2**3
+ 15 .debug_ranges 00001058  00000000  00000000  00035e40  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00026c62  00000000  00000000  00036c48  2**0
+ 16 .debug_macro  00026c62  00000000  00000000  00036e98  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000141e0  00000000  00000000  0005d8aa  2**0
+ 17 .debug_line   000142f5  00000000  00000000  0005dafa  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f3d23  00000000  00000000  00071a8a  2**0
+ 18 .debug_str    000f3e53  00000000  00000000  00071def  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  001657ad  2**0
+ 19 .comment      00000053  00000000  00000000  00165c42  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000048bc  00000000  00000000  00165800  2**2
+ 20 .debug_frame  00004934  00000000  00000000  00165c98  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -434,8 +434,8 @@ int main(void)
 	  if((HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)==0)){
  8000530:	e7e4      	b.n	80004fc <main+0x2c>
  8000532:	bf00      	nop
- 8000534:	20000144 	.word	0x20000144
- 8000538:	20000074 	.word	0x20000074
+ 8000534:	2000015c 	.word	0x2000015c
+ 8000538:	20000080 	.word	0x20000080
  800053c:	48000800 	.word	0x48000800
 
 08000540 <SystemClock_Config>:
@@ -677,7 +677,7 @@ static void MX_I2C1_Init(void)
  800069e:	bf00      	nop
  80006a0:	bd80      	pop	{r7, pc}
  80006a2:	bf00      	nop
- 80006a4:	20000028 	.word	0x20000028
+ 80006a4:	20000034 	.word	0x20000034
  80006a8:	40005400 	.word	0x40005400
  80006ac:	10909cec 	.word	0x10909cec
 
@@ -741,7 +741,7 @@ static void MX_TIM16_Init(void)
  80006f2:	bf00      	nop
  80006f4:	bd80      	pop	{r7, pc}
  80006f6:	bf00      	nop
- 80006f8:	20000144 	.word	0x20000144
+ 80006f8:	2000015c 	.word	0x2000015c
  80006fc:	40014400 	.word	0x40014400
 
 08000700 <MX_TIM17_Init>:
@@ -770,9 +770,9 @@ static void MX_TIM17_Init(void)
  8000712:	4b0d      	ldr	r3, [pc, #52]	; (8000748 <MX_TIM17_Init+0x48>)
  8000714:	2200      	movs	r2, #0
  8000716:	609a      	str	r2, [r3, #8]
-  htim17.Init.Period = 10000 - 1;
+  htim17.Init.Period = 2000 - 1;
  8000718:	4b0b      	ldr	r3, [pc, #44]	; (8000748 <MX_TIM17_Init+0x48>)
- 800071a:	f242 720f 	movw	r2, #9999	; 0x270f
+ 800071a:	f240 72cf 	movw	r2, #1999	; 0x7cf
  800071e:	60da      	str	r2, [r3, #12]
   htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
  8000720:	4b09      	ldr	r3, [pc, #36]	; (8000748 <MX_TIM17_Init+0x48>)
@@ -804,7 +804,7 @@ static void MX_TIM17_Init(void)
  8000742:	bf00      	nop
  8000744:	bd80      	pop	{r7, pc}
  8000746:	bf00      	nop
- 8000748:	20000074 	.word	0x20000074
+ 8000748:	20000080 	.word	0x20000080
  800074c:	40014800 	.word	0x40014800
 
 08000750 <MX_USART2_UART_Init>:
@@ -879,7 +879,7 @@ static void MX_USART2_UART_Init(void)
  80007a2:	bf00      	nop
  80007a4:	bd80      	pop	{r7, pc}
  80007a6:	bf00      	nop
- 80007a8:	200000c0 	.word	0x200000c0
+ 80007a8:	200000d8 	.word	0x200000d8
  80007ac:	40004400 	.word	0x40004400
 
 080007b0 <MX_GPIO_Init>:
@@ -1052,10 +1052,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80008de:	46bd      	mov	sp, r7
  80008e0:	bd80      	pop	{r7, pc}
  80008e2:	bf00      	nop
- 80008e4:	20000144 	.word	0x20000144
- 80008e8:	20000074 	.word	0x20000074
+ 80008e4:	2000015c 	.word	0x2000015c
+ 80008e8:	20000080 	.word	0x20000080
  80008ec:	08003b64 	.word	0x08003b64
- 80008f0:	200000c0 	.word	0x200000c0
+ 80008f0:	200000d8 	.word	0x200000d8
 
 080008f4 <Error_Handler>:
 /**
@@ -1577,7 +1577,7 @@ void TIM1_UP_TIM16_IRQHandler(void)
  8000b36:	bf00      	nop
  8000b38:	bd80      	pop	{r7, pc}
  8000b3a:	bf00      	nop
- 8000b3c:	20000144 	.word	0x20000144
+ 8000b3c:	2000015c 	.word	0x2000015c
 
 08000b40 <TIM1_TRG_COM_TIM17_IRQHandler>:
 
@@ -1601,7 +1601,7 @@ void TIM1_TRG_COM_TIM17_IRQHandler(void)
  8000b4a:	bf00      	nop
  8000b4c:	bd80      	pop	{r7, pc}
  8000b4e:	bf00      	nop
- 8000b50:	20000074 	.word	0x20000074
+ 8000b50:	20000080 	.word	0x20000080
 
 08000b54 <SystemInit>:
   * @brief  Setup the microcontroller system.
@@ -1767,7 +1767,7 @@ LoopForever:
 	ldr	r2, =_sbss
  8000c00:	2000000c 	.word	0x2000000c
 	ldr	r3, = _ebss
- 8000c04:	20000194 	.word	0x20000194
+ 8000c04:	200001ac 	.word	0x200001ac
 
 08000c08 <ADC1_2_IRQHandler>:
  * @retval : None
@@ -1956,7 +1956,7 @@ __weak void HAL_IncTick(void)
  8000ce0:	4770      	bx	lr
  8000ce2:	bf00      	nop
  8000ce4:	20000008 	.word	0x20000008
- 8000ce8:	20000190 	.word	0x20000190
+ 8000ce8:	200001a8 	.word	0x200001a8
 
 08000cec <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -1976,7 +1976,7 @@ __weak uint32_t HAL_GetTick(void)
  8000cf8:	f85d 7b04 	ldr.w	r7, [sp], #4
  8000cfc:	4770      	bx	lr
  8000cfe:	bf00      	nop
- 8000d00:	20000190 	.word	0x20000190
+ 8000d00:	200001a8 	.word	0x200001a8
 
 08000d04 <HAL_Delay>:
   *       implementations in user file.

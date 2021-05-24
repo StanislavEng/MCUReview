@@ -219,4 +219,4 @@ RCC.APB1Freq_Value=80000000
 ProjectManager.DeviceId=STM32L476RGTx
 ProjectManager.LibraryCopy=1
 PA3.GPIO_Label=USART_RX
-isbadioc=true
+isbadioc=false

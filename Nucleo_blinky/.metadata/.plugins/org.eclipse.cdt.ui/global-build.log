@@ -1,17 +1,116 @@
-22:46:32 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+19:09:11 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Nucleo_blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_blinky.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  249 |    HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+      |                               ^~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:449,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1679:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+ 1679 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+At top level:
+../Core/Src/main.c:74:14: warning: 'gyroData' defined but not used [-Wunused-variable]
+   74 | static float gyroData[2];
+      |              ^~~~~~~~
+arm-none-eabi-gcc -o "Nucleo_blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_blinky.map" -Wl,--gc-sections -static -u_print_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Nucleo_blinky.elf
  
 arm-none-eabi-objdump -h -S  Nucleo_blinky.elf  > "Nucleo_blinky.list"
 arm-none-eabi-objcopy  -O binary  Nucleo_blinky.elf  "Nucleo_blinky.bin"
 arm-none-eabi-size   Nucleo_blinky.elf 
    text	   data	    bss	    dec	    hex	filename
-  15296	     20	   1956	  17272	   4378	Nucleo_blinky.elf
+  41468	    488	   2056	  44012	   abec	Nucleo_blinky.elf
 Finished building: default.size.stdout
  
 Finished building: Nucleo_blinky.bin
  
 Finished building: Nucleo_blinky.list
+ 
+19:09:16 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+make -j8 all 
+arm-none-eabi-size   Nucleo_blinky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41468	    488	   2056	  44012	   abec	Nucleo_blinky.elf
+Finished building: default.size.stdout
+ 
+20:22:19 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:251:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  251 |    HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+      |                               ^~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:449,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1679:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+ 1679 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+At top level:
+../Core/Src/main.c:74:14: warning: 'gyroData' defined but not used [-Wunused-variable]
+   74 | static float gyroData[2];
+      |              ^~~~~~~~
+arm-none-eabi-gcc -o "Nucleo_blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_blinky.map" -Wl,--gc-sections -static -u_print_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo_blinky.elf
+ 
+arm-none-eabi-objdump -h -S  Nucleo_blinky.elf  > "Nucleo_blinky.list"
+arm-none-eabi-objcopy  -O binary  Nucleo_blinky.elf  "Nucleo_blinky.bin"
+arm-none-eabi-size   Nucleo_blinky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41500	    488	   2056	  44044	   ac0c	Nucleo_blinky.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo_blinky.bin
+ 
+Finished building: Nucleo_blinky.list
+ 
+20:24:18 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:253:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  253 |    HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+      |                               ^~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:449,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1679:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+ 1679 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+At top level:
+../Core/Src/main.c:74:14: warning: 'gyroData' defined but not used [-Wunused-variable]
+   74 | static float gyroData[2];
+      |              ^~~~~~~~
+arm-none-eabi-gcc -o "Nucleo_blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_blinky.map" -Wl,--gc-sections -static -u_print_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo_blinky.elf
+ 
+arm-none-eabi-objdump -h -S  Nucleo_blinky.elf  > "Nucleo_blinky.list"
+arm-none-eabi-objcopy  -O binary  Nucleo_blinky.elf  "Nucleo_blinky.bin"
+arm-none-eabi-size   Nucleo_blinky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41532	    488	   2056	  44076	   ac2c	Nucleo_blinky.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo_blinky.bin
+ 
+Finished building: Nucleo_blinky.list
+ 
+20:24:40 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+make -j8 all 
+arm-none-eabi-size   Nucleo_blinky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41532	    488	   2056	  44076	   ac2c	Nucleo_blinky.elf
+Finished building: default.size.stdout
  

@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,26 +43,41 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+TIM_HandleTypeDef htim6;
 TIM_HandleTypeDef htim16;
 TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
 
-float accelData[3];
-float gyroData[3];
-
 /* USER CODE BEGIN PV */
 //#define MPUSlaveAddr 0x68								 // Defines the MPU Slave address
-static const uint8_t MPUSlaveAddr = 0x68;				 // makes it more readable for functions
-static const uint8_t MPU6050_ADDR = MPUSlaveAddr << 1;   // Setting I2C slave address (and saving bit for R/W bit)
-static const uint8_t MPU_WHOAMI = 0x75;                  // for checking if the device is (properly) detected
+//static const uint8_t MPUSlaveAddr = 0x68;				 // makes it more readable for functions
+//static const uint8_t MPU6050_ADDR = MPUSlaveAddr << 1;   // Setting I2C slave address (and saving bit for R/W bit)
+#define MPU6050_ADDR 0xD0
+//static const uint8_t MPU_WHOAMI = 0x75;                  // for checking if the device is (properly) detected
+#define WHO_AM_I_REG 0x75
 //#define PWR_MGMT_ADDR 0x6B                             // used for waking up device from sleep
-static const uint8_t PWR_MGMT_ADDR = 0x6B;				 // makes it more readable for functions
-static const uint8_t SMP_RATE_DIV = 0x19; 				 // sample rate divider register
-static const uint8_t GYRO_ADDR = 0x1B;					 // Gyroscope register address
-static const uint8_t ACCEL_ADDR = 0x1C;					 // Accelerometer register address
-static const uint8_t accelRead = 0x3B;
-static const uint8_t gyroRead  = 0x43;
+//static const uint8_t
+#define PWR_MGMT_1_REG 0x6B				 // makes it more readable for functions
+//static const uint8_t
+#define SMPLRT_DIV_REG 0x19 				 // sample rate divider register
+//static const uint8_t
+#define GYRO_CONFIG_REG 0x1B					 // Gyroscope register address
+//static const uint8_t
+#define ACCEL_CONFIG_REG 0x1C					 // Accelerometer register address
+//static const uint8_t
+#define ACCEL_XOUT_H_REG 0x3B
+//static const uint8_t
+#define gyroRead  0x43
+
+static float accelData[2];
+static float gyroData[2];
+static int16_t X_ACCEL_RAW;
+static int16_t Y_ACCEL_RAW;
+static int16_t Z_ACCEL_RAW;
+static int16_t X_ACCEL;
+static int16_t Y_ACCEL;
+static int16_t Z_ACCEL;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,6 +87,7 @@ static void MX_USART2_UART_Init(void);
 static void MX_TIM16_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_TIM17_Init(void);
+static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -78,11 +95,33 @@ static void MX_TIM17_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void MPU6050_Init(void){
-	uint8_t addr_check, data;
-	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, MPU_WHOAMI, 1, &addr_check, 1, 1000); // reads the WHO_AM_I register for its address
+	uint8_t check, Data;
+	Data = 128;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+	Data = 104;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, WHO_AM_I_REG, 1, &Data, 1, 1000);
+	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR,WHO_AM_I_REG,1, &check, 1, 1000);
+	//HAL_I2C_Mem_Read(hi2c, DevAddress, MemAddress, MemAddSize, pData, Size, Timeout)
+	Data = 0;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+	Data = 0x07;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+	Data = 0x00;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+	Data = 0x00;
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
 
-	if (addr_check == MPUSlaveAddr){    // checks if the MPU is (properly) detected
+
+
+	/*HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, MPU_WHOAMI, 1, addr_check,1, 100); // reads the WHO_AM_I register for its address
+	char buff[100];
+	//HAL_I2C_Mem_Read(hi2c, DevAddress, MemAddress, MemAddSize, pData, Size, Timeout)
+	//sprintf(buff, "Read, but expected value is = %d",addr_check);
+	//HAL_UART_Transmit(&huart2, &addr_check, 1, 100);
+	if (addr_check == 104){    // checks if the MPU is (properly) detected
 	/////// Wakes the device up by setting power management register to 0x0 /////////
+		strcpy((char*)buff,"We worked!\r\n");
+		HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
 		data = 0;
 		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_ADDR, 1, &data, 1, 1000);
 	/////// Sets the sampling rate of the device ////////  Gyro rate default = 8kHz
@@ -94,21 +133,30 @@ void MPU6050_Init(void){
 		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, ACCEL_ADDR, 1, &data, 1, 1000);
 
 	}
+	   for(uint8_t i=0 ; i <255;i++)
+	   {
+	       if(HAL_I2C_IsDeviceReady(&hi2c1,i,1 ,10) == HAL_OK )
+	       {
+	    	  sprintf(buff, "Right at value %f",i);
+	    	  HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+	          break;
+	       }
+	    }*/
 }
 void readAccel(void){
 	uint8_t accData[6]; // Takes in : X high, X low, Y high, Y low, Z high, Z low
 
-	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, accelRead, 1, accData, 6, 1000);
-
+	//HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, accelRead, I2C_MEMADD_SIZE_8BIT, &accData, 6, 10);
+	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, accData, 6, 1000);
 	// Raw Accelerometer data
-	int16_t X_ACCEL_RAW = (int16_t)( accData[0] << 8 | accData[1] );
-	int16_t Y_ACCEL_RAW = (int16_t)( accData[2] << 8 | accData[3] );
-	int16_t Z_ACCEL_RAW = (int16_t)( accData[4] << 8 | accData[5] );
+	X_ACCEL_RAW = (int16_t)( accData[0] << 8 | accData[1] );
+	Y_ACCEL_RAW = (int16_t)( accData[2] << 8 | accData[3] );
+	Z_ACCEL_RAW = (int16_t)( accData[4] << 8 | accData[5] );
 
 	// Converted Accelerometer data
-	int16_t X_ACCEL = X_ACCEL_RAW / 16384.0;
-	int16_t Y_ACCEL = Y_ACCEL_RAW / 16384.0;
-	int16_t Z_ACCEL = Z_ACCEL_RAW / 16384.0;
+	X_ACCEL = X_ACCEL_RAW  / 16384.0;
+	Y_ACCEL = Y_ACCEL_RAW  / 16384.0;
+	Z_ACCEL = Z_ACCEL_RAW  / 16384.0;
 
 	// sending converted data into a array
 	accelData[0] = (float)X_ACCEL;
@@ -117,10 +165,10 @@ void readAccel(void){
 
 
 }
-void readGyro(void){
+/*void readGyro(void){
 	uint8_t gyroData[6]; // Takes in : X high, X low, Y high, Y low, Z high, Z low
 
-	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, gyroRead, 1, gyroData, 6, 1000);
+	//HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, gyroRead, 1, &gyroData, 6, 10);
 
 	// Raw Accelerometer data
 	uint16_t X_GYRO_RAW = (int16_t)( gyroData[0] << 8 | gyroData[1] );
@@ -128,16 +176,16 @@ void readGyro(void){
 	uint16_t Z_GYRO_RAW = (int16_t)( gyroData[4] << 8 | gyroData[5] );
 
 	// Converted Accelerometer data
-	uint16_t X_GYRO = X_GYRO_RAW / 16384.0;
-	uint16_t Y_GYRO = Y_GYRO_RAW / 16384.0;
-	uint16_t Z_GYRO = Z_GYRO_RAW / 16384.0;
+	uint16_t X_GYRO = X_GYRO_RAW / 131.0;
+	uint16_t Y_GYRO = Y_GYRO_RAW / 131.0;
+	uint16_t Z_GYRO = Z_GYRO_RAW / 131.0;
 
 	// sending converted data into a array
-	gyroData[0] = (float)X_GYRO / 131.0;
-	gyroData[1] = (float)Y_GYRO / 131.0;
-	gyroData[2] = (float)Z_GYRO / 131.0;
+	gyroData[0] = X_GYRO ;
+	gyroData[1] = Y_GYRO ;
+	gyroData[2] = Z_GYRO ;
 
-}
+}*/
 /* USER CODE END 0 */
 
 /**
@@ -172,9 +220,11 @@ int main(void)
   MX_TIM16_Init();
   MX_I2C1_Init();
   MX_TIM17_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim16);
   HAL_TIM_Base_Start_IT(&htim17);
+  MPU6050_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -195,6 +245,17 @@ int main(void)
 		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
 		  HAL_Delay(100);
 	  }
+	  char buff[100];
+	  readAccel();
+	  //strcpy((char*)buff,"Hello There!\r\n");  // temporarily dumping this into the one interrupt I have going
+	  //strcpy((char*)buff, "Ax = %f Ay = %f, Az = %f", accelData[0],accelData[1],accelData[2]);
+	  sprintf(buff, "Ax = %f Ay = %f, Az = %f\r\n", accelData[0],accelData[1],accelData[2]);
+	  HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+	  HAL_Delay(200);
+	  //readAccel();
+	  //sprintf(buff, "Gx = %f Gy = %f, Gz = %f\r\n", gyroData[0],gyroData[1],gyroData[2]);
+	  //HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+	  //HAL_Delay(200);
 	  //HAL_Delay(100);
 
 
@@ -303,6 +364,44 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_Init(void)
+{
+
+  /* USER CODE BEGIN TIM6_Init 0 */
+
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 8000 - 1;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 10000 - 1;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
 
 }
 
@@ -447,9 +546,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 	}
 	if (htim == &htim17){
-	  uint8_t buff[12];
-	  strcpy((char*)buff,"Hello!\r\n");  // temporarily dumping this into the one interrupt I have going
+	 /* char buff[100];
+	  readAccel();
+	  //strcpy((char*)buff,"Hello There!\r\n");  // temporarily dumping this into the one interrupt I have going
+	  //strcpy((char*)buff, "Ax = %f Ay = %f, Az = %f", accelData[0],accelData[1],accelData[2]);
+	  sprintf(buff, "Ax = %f Ay = %f, Az = %f\r\n", accelData[0],accelData[1],accelData[2]);
 	  HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);
+	  readAccel();
+	  sprintf(buff, "Gx = %f Gy = %f, Gz = %f\r\n", gyroData[0],gyroData[1],gyroData[2]);
+	  HAL_UART_Transmit(&huart2, buff, strlen((char*)buff), HAL_MAX_DELAY);*/
 	}
 }
 /* USER CODE END 4 */
@@ -487,3 +592,5 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+

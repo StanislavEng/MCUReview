@@ -1,20 +1,10 @@
-22:46:32 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
+20:24:40 **** Incremental Build of configuration Debug for project Nucleo_blinky ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Nucleo_blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_blinky.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Nucleo_blinky.elf
- 
-arm-none-eabi-objdump -h -S  Nucleo_blinky.elf  > "Nucleo_blinky.list"
-arm-none-eabi-objcopy  -O binary  Nucleo_blinky.elf  "Nucleo_blinky.bin"
 arm-none-eabi-size   Nucleo_blinky.elf 
    text	   data	    bss	    dec	    hex	filename
-  15296	     20	   1956	  17272	   4378	Nucleo_blinky.elf
+  41532	    488	   2056	  44076	   ac2c	Nucleo_blinky.elf
 Finished building: default.size.stdout
  
-Finished building: Nucleo_blinky.bin
- 
-Finished building: Nucleo_blinky.list
- 
 
-22:46:34 Build Finished. 0 errors, 0 warnings. (took 1s.341ms)
+20:24:40 Build Finished. 0 errors, 0 warnings. (took 365ms)
 

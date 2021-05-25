@@ -99,8 +99,8 @@ void MPU6050_Init(void){
 	Data = 128;
 	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
 	Data = 104;
-	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, WHO_AM_I_REG, 1, &Data, 1, 1000);
-	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR,WHO_AM_I_REG,1, &check, 1, 1000);
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, WHO_AM_I_REG, 1,  &Data, 1, 1000);
+	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, WHO_AM_I_REG, 1, &check, 1, 1000);
 	//HAL_I2C_Mem_Read(hi2c, DevAddress, MemAddress, MemAddSize, pData, Size, Timeout)
 	Data = 0;
 	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);

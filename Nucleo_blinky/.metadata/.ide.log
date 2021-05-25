@@ -2069,3 +2069,53 @@
 2021-05-24 13:03:01,609 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
 2021-05-24 13:03:01,862 [INFO] OpenFileManager:323 - Restore cursor
 2021-05-24 13:04:05,682 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,467x247,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-24 13:56:27,141 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-24 13:56:29,176 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-05-24 13:57:02,551 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 445070560 Bytes (547356672)
+2021-05-24 13:57:04,395 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 309960112 Bytes (547356672)
+2021-05-24 13:57:06,721 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 324283264 Bytes (547356672)
+2021-05-24 13:57:07,121 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM6_7L4
+2021-05-24 13:57:07,121 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-05-24 13:57:07,121 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-05-24 13:57:07,121 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-05-24 13:57:07,122 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-05-24 13:57:07,122 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-05-24 13:57:07,122 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8L4
+2021-05-24 13:57:07,122 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8L4
+2021-05-24 13:57:07,123 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-05-24 13:57:07,124 [INFO] CodeGenerator:641 - code generatio: config db path: F:\engineering\STI\theirstuff\IDE\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2021-05-24 13:57:07,719 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp_save
+2021-05-24 13:57:08,032 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\license.tmp
+2021-05-24 13:57:08,296 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp_save
+2021-05-24 13:57:08,360 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\gpio.tmp
+2021-05-24 13:57:08,394 [ERROR] IPConfigManager:1461 - ERROR: the RefConfig I2CEnableFastModePlus is not available in your config.xml file
+2021-05-24 13:57:09,165 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-24 13:57:09,166 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-24 13:57:09,168 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-05-24 13:57:09,206 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c_save
+2021-05-24 13:57:09,339 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_it.c
+2021-05-24 13:57:09,350 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h_save
+2021-05-24 13:57:09,426 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_it.h
+2021-05-24 13:57:09,459 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c_save
+2021-05-24 13:57:09,589 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\stm32l4xx_hal_msp.c
+2021-05-24 13:57:09,598 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp_save
+2021-05-24 13:57:09,639 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\MXTmpFiles\system.tmp
+2021-05-24 13:57:09,673 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h_save
+2021-05-24 13:57:09,749 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\stm32l4xx_hal_conf.h
+2021-05-24 13:57:09,802 [WARN] IPConfigManager:2976 - IP not found : TIM
+2021-05-24 13:57:09,803 [WARN] CodeGenerator:3191 - IP not found : null
+2021-05-24 13:57:09,820 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h_save
+2021-05-24 13:57:09,884 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Inc\main.h
+2021-05-24 13:57:09,898 [INFO] CodeEngine:229 - oldGeneratedFile, F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c_save
+2021-05-24 13:57:10,017 [INFO] CodeEngine:247 - Generated code: F:\engineering\codespace\MCUReview\Nucleo_blinky\Nucleo_blinky\Core\Src\main.c
+2021-05-24 13:57:12,202 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 1595mS.
+2021-05-24 13:57:12,207 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-05-24 13:57:12,632 [INFO] ConfigFileManager:1242 - The Die is : DIE415
+2021-05-24 13:57:12,673 [INFO] ApiDbMcu:458 - Load IP Config File for FATFS
+2021-05-24 13:57:12,722 [INFO] ApiDbMcu:458 - Load IP Config File for FREERTOS
+2021-05-24 13:57:12,875 [INFO] ApiDbMcu:458 - Load IP Config File for TOUCHSENSING
+2021-05-24 13:57:12,906 [INFO] ApiDbMcu:458 - Load IP Config File for USB_DEVICE
+2021-05-24 13:57:12,942 [INFO] ApiDbMcu:458 - Load IP Config File for USB_HOST
+2021-05-24 13:57:16,301 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 4094mS.
+2021-05-24 13:57:16,302 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-05-24 13:57:16,303 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
